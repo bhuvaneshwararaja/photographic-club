@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
+
+
+
+:root{
+  --text--white:#fff;
+}
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Nunito',sans-serif;
+}
+
+.container {
+  width: 100%;
+}
+.animated-scene__frame-1,.animated-scene__frame-2{
+  background-image: url(../images/photoback.jpg);
+}
+.animated-scene {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  min-height: 400px;
+  animation: infiniteScrollBg 50s linear infinite;
+}
+
+.animated-scene__frame {
+   width: 100%;
+   height: 100%;
+   background-size: cover;
+   background-color: #4277a3;
+   
+}
+.bg--black--over{
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1)),
+  linear-gradient(0deg, black, transparent);
+  position:absolute;
+  top: 0;
+  left: 0;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes infiniteScrollBg {
+  0% {
+    transform: translateY(0%);
+  }
+  100%{
+    transform: translateY(-100%);
+  }
+}
+.landing-main-wrapper{
+  width: 100%;
+  
+  min-height: 90vh;
+}
+
+.club--logo{
+  position: absolute;
+  top: 1rem;
+  left:1rem;
+}
+.txt--wh,.bg--black--over p{
+  color: var(--text--white);
+
+}
+.bg--black--over h1{
+  font-size: 2.3rem;
+  margin-bottom: 0rem;
+
+}
+.bg--black--over p{
+  font-size: 1.3rem;
+  margin-top: 1rem;
+}
+form{
+  width: 30rem;
+  height: 20rem;
+  background-color:#fff;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+}
+form h1{
+  color:#333;
+  font-size: 1.3rem;
+  background-color:orange;
+  display: inline-block;
+  padding:0rem 2rem 0rem 0.5rem;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.flex--wrap{
+  display: flex;
+  margin-bottom: 1rem;
+  width:100%;
+  justify-content:center;
+}
+.flex--wrap i{
+  font-size:2rem;
+  background-color:orange;
+  padding:.2rem .5rem;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+}
+.form-control{
+  width:15rem;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  outline: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border:2px solid orange;
+  
+}
+.flex--inp--container{
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  height:60%;
+
+}
+.btn--submit{
+  padding:.5rem 1.5rem;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  background:orange;
+  color:#333;
+  border:none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+}
+/* 
+@media (max-width: 750px ) {
+  .bg--black--over h1{
+    font-size: 5vw;
+  }
+
+}
+@media (max-width: 510px) {
+  .bg--black--over h1{
+    font-size: 5vw;
+  
+  }
+  .bg--black--over p{
+    font-size: 4vw;
+  
+  }
+  form{
+    width: 90%;
+  }
+  .flex--inp--container{
+    height:70%;
+  }
+
+}
+@media (max-width: 380px) {
+
+  form{
+    max-width: 90%;
+  }
+  .flex--inp--container{
+    height:70%;
+  }
+
+} */
