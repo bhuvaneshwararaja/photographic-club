@@ -34,7 +34,7 @@ body {
 .bg--black--over{
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1)),
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)),
   linear-gradient(0deg, black, transparent);
   position:absolute;
   top: 0;
@@ -99,6 +99,7 @@ form h1{
   margin-bottom: 1rem;
   width:100%;
   justify-content:center;
+  margin-bottom: 0;
 }
 .flex--wrap i{
   font-size:2rem;
@@ -138,6 +139,23 @@ form h1{
   border:none;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 
+}
+
+.err,.exist{
+  color:crimson !important;
+  margin: 0.5rem !important;
+  font-size: .8rem !important;
+}
+.th{
+  font-size: 1rem !important;
+  color:green !important;
+}
+.exist,.th{
+  text-align: center;
+  margin:0 !important;
+}
+.btn--submit{
+  margin:.5rem 0rem;
 }
 /* 
 @media (max-width: 750px ) {
