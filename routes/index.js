@@ -1,9 +1,28 @@
 var express = require('express');
 var router = express.Router();
+var mongo = require('../DB/connect');
+var {Vote,VoteSchema} = require('../models/vote')
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'PhotoGraphic Club MSEC' });
 });
+mongo()
+router.post('/voting',(req,res) => {
+  console.log(req.body)
+  const votingUser = new Vote({
+    regNo:req.body.registrationNo,
+    vote:parseInt(req.body.votingNo)
+  })
+  Vote.findOne({regNo:req.body.registrationNo},(err,found) => {
+    if(!found){
+       votingUser.save()
+        res.send("1")
+      }
+    else{
+      res.send("0")
+      console.log("user already exist")
+    }
+  })
+})
 
 module.exports = router;
