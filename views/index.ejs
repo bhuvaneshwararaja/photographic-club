@@ -18,19 +18,31 @@
           <p>Support the best photoGrapher of Mepco</p>
           <form>
             <h1>Vote</h1>
+            <p class="exist"></p>
+            <p class="th"></p>
+
             <div class="flex--inp--container">
-              <div class="flex--wrap">
-                <i class="las la-user"></i>
-                <input type="text" class="form-control" placeholder="Enter RegNo (eg, 14723)"/>
+              <div class="row">
+                <div class="flex--wrap">
+                  <i class="las la-user icon"></i>
+                  <input type="text" class="form-control regno" placeholder="Enter RegNo (eg, 14723)" name="regNo" value="" onInput="getInp()"/>
+                </div>
+              <p class="reg-err err" ></p>
+
               </div>
-              <div class="flex--wrap">
-                <i class="las la-poll-h"></i>
-                <input type="text" class="form-control" placeholder="Enter Voting No (0-15)"/>
+              
+              <div class="row">
+                <div class="flex--wrap">
+                  <i class="las la-poll-h icon"></i>
+                  <input type="text" class="form-control vote" placeholder="Enter Voting No (0-15)" name="votingNo" value="" onInput="getInp()"/>
+                </div>
+              <p class="vote-err err" ></p>
               </div>
-              <button type="button" class="btn--submit">Submit</button>
+              <button type="button" class="btn--submit" onClick="onSubmit()">Submit</button>
             </div>
           </form>
         </div>
     </div>
+    <script src="/javascripts/ajax.js"></script>
   </body>
 </html>
