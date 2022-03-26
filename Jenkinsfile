@@ -1,5 +1,4 @@
 node{
-=
 	environment {
 		DOCKERHUB_CREDENTIALS=credentials('docker_id')
 	}
