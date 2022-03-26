@@ -6,7 +6,7 @@ node{
         commit_id = readFile('.git/commit-id').trim()
     }
     stage('docker build/push'){
-        docker.withRegistry('https://index.docker.io/v1/', 'dockerhub'){
+        docker.withRegistry('https://index.docker.io/v1/', 'docker_id'){
             def app = docker.build("bhuvaneshwararaja/docker-club-nodejs-image:${commit_id}",'.').push()
         }
     }
