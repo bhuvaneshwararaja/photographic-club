@@ -9,10 +9,14 @@
 </head>
 <body onload="ClubResult()">
     <div class="result-container">
+    <h1 class="winner"><%= title %></h1>
+
         <img src="/images/logo.png" class="club--logo">
-        <div class="chart--container">
-            <canvas id="myChart" width="400" height="400"></canvas>
-    
+        <div class="chart-container-wrapper">
+            <div class="chart--container eq-wi-hi">
+                <canvas id="myChart" width="400" height="400"></canvas>
+            </div>
+            <div class="chart--results eq-wi-hi"></div>
         </div>
     </div>
 
