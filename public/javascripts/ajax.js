@@ -18,7 +18,7 @@ function getInp(){
 function onSubmit(){
     var response = getInp()
     if(response !=0 ){
-        xml.open('POST',"https://photography-club-msec.herokuapp.com/voting")
+        xml.open('POST',"http://localhost:3000/voting")
         xml.setRequestHeader('Content-Type', 'application/json')
         xml.send(JSON.stringify(response));
         xml.onload = function(){
@@ -41,7 +41,7 @@ function ClubResult(){
     for(let i=0;i<15;i++) arr.push(0)
     // arr.fill(0)
     console.log(arr)
-    xml.open('GET',"https://photography-club-msec.herokuapp.com/result/view")
+    xml.open('GET',"http://localhost:3000/result/view")
     xml.send()
     xml.onload = function() {
             const result = JSON.parse(this.responseText)
