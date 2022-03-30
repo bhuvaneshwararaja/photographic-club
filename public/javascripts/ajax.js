@@ -23,6 +23,7 @@ function onSubmit(){
         body: JSON.stringify(respon)
     }).then((res) => {return res.json()})
     .then((res) => { 
+        console.log(res)
         if(res.status === false){
             document.querySelector('.exist').innerHTML = "User Already Exist"
         }
