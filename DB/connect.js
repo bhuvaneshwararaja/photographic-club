@@ -1,6 +1,6 @@
 var mongoose = require('mongoose')
 
-var url = "mongodb+srv://bhuvanesh:Bhuvanesh007@cluster0.0nayn.mongodb.net/PhotoGraphyclub?retryWrites=true&w=majority";
+var url = "mongodb+srv://bhuvanesh:Bhuvanesh007!@cluster0.0nayn.mongodb.net/photographyClub?retryWrites=true&w=majority";
 
 let connectDB = () => {
     mongoose.connect(url,{
