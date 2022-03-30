@@ -13,13 +13,16 @@ router.post('/voting',(req,res) => {
     regNo:req.body.registrationNo,
     vote:parseInt(req.body.votingNo)
   })
+  
   Vote.findOne({regNo:req.body.registrationNo},(err,found) => {
     if(!found){
        votingUser.save()
-        res.send("1")
+        res.send({status:true})
+        console.log(true)
       }
     else{
-      res.send("0")
+      res.send({status:false})
+      
       console.log("user already exist")
     }
   })
