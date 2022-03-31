@@ -18,12 +18,20 @@ function getInp(){
 
 function onSubmit(){
     var respon = getInp()
+    var btn = document.getElementById('btn--change')
+    btn.classList.remove('btn--submit')
+    btn.classList.add('loading')
+    btn.innerText=""
     fetch("/voting",{
         method: 'POST',
         headers:{'Content-Type':'application/json'},
         body: JSON.stringify(respon)
     }).then((res) => {return res.json()})
     .then((res) => { 
+        btn.classList.add('btn--submit')
+        btn.classList.remove('loading')
+        btn.innerText="Submit"
+
         if(res.status === false){
             document.querySelector('.exist').innerHTML = "User Already Exist"
         }
@@ -60,8 +68,7 @@ function CalcThreeWinner(){
         if(count < 4){
             if(AllPhotoVote[itr].getAttribute('data-vote') == search){
 
-                count == 1 ? ResultText[itr].style.background ="greenyellow" :(count == 2 ? ResultText[itr].style.background ="indianred":ResultText[itr].style.background ="sandybrown")
-                count == 1 || count == 2 || count == 3 ?ResultText[itr].style.boxShadow =' rgb(255 255 255 / 64%) 0px 3px 14px 7px' :""
+                count == 1 ? ResultText[itr].style.border ="10px solid greenyellow" :(count == 2 ? ResultText[itr].style.border ="10px solid indianred":ResultText[itr].style.border ="10px solid sandybrown")
                 count++
                 search = temp[temp.length-count]
                 itr = 0
@@ -127,16 +134,23 @@ function ClubResult(){
     xml.open('GET',"/result/view")
     xml.send()
     xml.onload = function() {
-            const result = JSON.parse(this.responseText)
-            var len = result.length
-
-            for(let i=0;i<len;i++){
-                arr[parseInt(result[i].vote)-1]+=1
+            console.log(this.status)
+            if(this.status == 404){
+                document.querySelector('.winner').innerHTML ="No Result Found"
             }
-           
-            CreateNodeAndAppendResult(arr)
-            CalcThreeWinner()
-            CreateChartResult(arr)
+            else{
+                const result = JSON.parse(this.responseText)
+                var len = result.length
+    
+                for(let i=0;i<len;i++){
+                    arr[parseInt(result[i].vote)-1]+=1
+                }
+               
+                CreateNodeAndAppendResult(arr)
+                CalcThreeWinner()
+                CreateChartResult(arr)
+            }
+
    
 
     }
