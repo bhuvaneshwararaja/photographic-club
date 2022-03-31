@@ -24,7 +24,6 @@ function onSubmit(){
         body: JSON.stringify(respon)
     }).then((res) => {return res.json()})
     .then((res) => { 
-        console.log(res)
         if(res.status === false){
             document.querySelector('.exist').innerHTML = "User Already Exist"
         }
@@ -54,13 +53,12 @@ function CalcThreeWinner(){
             document.querySelector('.winner').innerHTML = `Pixie Event Winner PhotoNo ${index+1}`
         }
     })
-    // console.log(a)
+
     let count = 1
     var itr = 0
     while(itr !=15){
         if(count < 4){
             if(AllPhotoVote[itr].getAttribute('data-vote') == search){
-                console.log(true)
 
                 count == 1 ? ResultText[itr].style.background ="greenyellow" :(count == 2 ? ResultText[itr].style.background ="indianred":ResultText[itr].style.background ="sandybrown")
                 count == 1 || count == 2 || count == 3 ?ResultText[itr].style.boxShadow =' rgb(255 255 255 / 64%) 0px 3px 14px 7px' :""
@@ -134,7 +132,6 @@ function ClubResult(){
 
             for(let i=0;i<len;i++){
                 arr[parseInt(result[i].vote)-1]+=1
-                console.log(arr)
             }
            
             CreateNodeAndAppendResult(arr)
