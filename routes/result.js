@@ -6,10 +6,13 @@ router.get("/",(req,res) => {
 })
 router.get('/view',(req,res) => {
     Vote.find({},(err,found) => {
-        if(!err){
+        if(!err && found) {
             console.log(typeof found)
             res.set('Content-Type', 'application/json')
             return res.status(200).send(JSON.stringify(found))
+        }
+        else{
+            return res.status(404).send()
         }
     })
  
